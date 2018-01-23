@@ -1,0 +1,164 @@
+
+.logo {
+    background-color: black;
+        width: 100%;
+        height: 10vh;
+    background-image: url('./img/camagru-blanc.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: inherit;
+    background-attachment: fixed;
+    background-size: 15vh;
+    background-position-y: 2vh;
+}
+
+#copyright {
+    margin-top: 95vh;
+    float: right;
+}
+
+.header-accueil {
+    background-color: black;
+    display: block;
+    height: 20%;
+}
+
+body {
+    background-image: url('http://blog.madame.lefigaro.fr/stehli/Photomaton1.JPG');
+    background-color: grey;
+    /* background-repeat:no-repeat; */
+    background-position:center;
+    background-attachment: fixed;
+    background-size: 90vh;
+    /* height: 100vw;     */
+}
+
+.menu {
+    margin-top: 10vh;
+    margin-bottom: 40vh;
+    margin-left: 35%;
+    display: block;
+    border: solid black 1px;
+    border-radius: 15px;
+    background-color: white;
+        height: 60%;
+        width: 30%;
+}
+
+.img-menu {
+    padding-top: 5vh;
+    margin-left: 3vw;
+    height: 9vh;
+    width: 25vw;
+}
+
+#subscription {
+    display: block;
+    height: 60vh;
+    width: 30vw;
+    text-align: center;
+    margin: auto;
+}
+
+/* #facebook {
+	background-color: rgb(27, 116, 249);
+	width: 10vw;
+	height: 3vh;
+} */
+
+#facebook, #signup-button, #login-button, #submit-com, #submit-pass {
+	display: block;
+    margin-top: 1.5vh;;
+    margin-left: 5vw;    
+	font-size: 1vw;
+    /* letter-spacing: 0.2vw; */
+    width: 20vw;
+    height: 2.5vh;
+    background-color: #3897f0;
+    text-align: center;
+    color: white;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    /* margin-left: 1vw; */
+}
+
+form {
+    margin-top: 6vh;
+}
+
+#login {
+    margin-left: 5vw;
+    margin-bottom: 0.8vh;
+    padding: 0.5vw;
+    text-align: center;
+    width: 20vw;
+    background-color: rgba(240, 235, 235, 0.952);
+    border: solid grey 1px;
+    border-radius: 5px;
+}
+
+#forgot {
+    margin-top: 3vh;
+    display: block;
+    color: grey;
+    text-align: center;
+    font-size: 0.9vw;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;    
+}
+
+h1 {
+    color: grey;
+    text-align: center;
+    font-size: 1.2vw;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;    
+}
+
+.fb {
+    text-align: center;
+    vertical-align: center;
+    color: #385185;
+    font-size: 1vw;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.fb_img {
+    width: 1.1vw;
+    margin-left: 7vw;
+    margin-right: 0.5vw;
+}
+
+#fb_img_butt {
+    display: inline-block;
+    position: relative;
+    /* margin-right: 8px; */
+    background-image: url("./img/facebook-white.png");
+
+}
+
+p {
+    margin-top: 8vh;
+    margin-bottom: 1vw;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 1vw;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.fb_title {
+    margin-top: 10vh;
+    vertical-align: center;
+}
+
+.text {
+    margin-top: 2vh;
+    color: grey;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;    
+    text-align: center;
+}
+
+#camera, #top-left-img, #return-img {
+    width: 60%;
+    border: solid black 6px;
+	border-radius: 5px;
+	float: left;
+}
