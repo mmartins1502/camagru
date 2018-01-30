@@ -17,20 +17,20 @@ var div = document.querySelector('#logo');
 var filters = document.querySelectorAll('.filter');
 
 // Get access to the camera!
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-	if (!navigator.getUserMedia) { //Browser compatibility
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia()) {
+	if (!navigator.getUserMedia()) { //Browser compatibility
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 	}
 	// Not adding `{ audio: true }` since we only want video now
 	if (navigator.getUserMedia) {
-		navigator.getUserMedia({video: true}, function(stream) {
+		navigator.getUserMedia({video: true}, function(stream){
 			//set canvas size
 			canvas.setAttribute('width', canvasWidth);
 			canvas.setAttribute('height', canvasHeight);
 			//canvas.classList.remove('hidden');
 			video.src = window.URL.createObjectURL(stream);
 			video.play();
-		}, isNoWebcam);
+		}, isNoWebcam());
 	}
 }
 
