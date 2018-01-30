@@ -1,28 +1,4 @@
 
-/* .logo {
-    background-color: black;
-        width: 100%;
-        height: 10vh;
-    background-image: url('../img/camagru-blanc.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position-y: inherit;
-    background-attachment: fixed;
-    background-size: 15vh;
-    background-position-y: 2vh;
-} */
-
-#copyright {
-    margin-top: 95vh;
-    float: right;
-}
-
-.header-accueil {
-    background-color: black;
-    display: block;
-    height: 20%;
-}
-
 body {
     background-image: url('http://blog.madame.lefigaro.fr/stehli/Photomaton1.JPG');
     background-position:center;
@@ -32,15 +8,15 @@ body {
 .menu {
     margin-top: 10vh;
     margin-bottom: 40vh;
-    margin-left: 35%;
-    display: block;
     border: solid black 1px;
     border-radius: 15px;
     background-color: white;
-        height: 60%;
-        width: 30%;
-    min-height: 900px;
-    /* min-width: 400px; */
+    height: 50vw;
+    width: 41%;
+    max-width: 600px;
+    min-height: 650px;
+    max-height: 1000px;
+    text-align: center;
 }
 
 .img-menu {
@@ -48,6 +24,7 @@ body {
     margin-left: 3vw;
     height: 15vh;
     width: 25vw;
+    max-width: 460px;
 }
 
 #subscription {
@@ -61,18 +38,18 @@ body {
 #login-button {
 	display: block;
     margin-top: 1.5vh;;
-    margin-left: 5vw;    
+    /* margin-left: 22%;     */
 	font-size: 1vw;
     width: 20vw;
     text-align: center;
 }
 
 form {
-    margin-top: 6vh;
+    margin-top: 4vh;
 }
 
 #login {
-    margin-left: 5vw;
+    /* margin-left: 5vw; */
     margin-bottom: 0.8vh;
     padding: 0.5vw;
     text-align: center;
@@ -94,24 +71,9 @@ form {
 h1 {
     color: grey;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;    
 }
-
-
-/* .fb {
-    text-align: center;
-    vertical-align: center;
-    color: #385185;
-    font-size: 1vw;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-
-.fb_img {
-    width: 1.1vw;
-    margin-left: 7vw;
-    margin-right: 0.5vw;
-} */
 
 p {
     margin-top: 8vh;
@@ -135,14 +97,55 @@ p {
     text-align: center;
 }
 
-#camera, #top-left-img, #return-img {
-    width: 60%;
+#camera, #return-img {
+    width: 100%;
+    max-width: 600px;
+    max-height: 460px;
     border: solid black 6px;
 	border-radius: 5px;
-	float: left;
 }
 
-.welcome {
-    color: white;
-    text-align: center;
+#vid_button {
+    /* position: relative; */
+    bottom: 52%;
+    width: 50%;
+    /* margin-left: 9vw; */
+	/* font-size: 1vw;     */
+}
+
+#bottom-left-app {
+    border: solid 3px black;
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+
+.content-all {
+    background-color: rgb(216, 214, 214);
+    border: solid 1px black;
+    border-radius: 10px;
+    background-image: url("../img/camagru.png");
+    background-size: 20%;
+    margin-top: 0.8vh;
+    margin-bottom: 10vh;
+    height: 80%;
+    width: 80%;
+    overflow-x: auto;
+    /* display: flex; */
+    justify-content:space-around;
+}
+
+.img-gallery {
+    margin-top: 1%;
+    padding-right: 6%;
+    padding-left: 6%;
+    padding-top: 0.5%;
+    width: 50%;
+    margin-left: 25vw;
+    align-self: center;
+}
+
+.cam {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

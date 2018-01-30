@@ -3,12 +3,12 @@
 <html>
 <header>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="./index.php">
+            <a class="navbar-brand" href="./gallery.php">
                 <img src="../../camagru/img/camagru-blanc.png" width="90" height="40" alt="">
             </a>
             <ul class="nav justify-content-end">
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Gallery</a>
+                      <a class="nav-link active" href="./gallery.php">Gallery</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link disabled" >Sign Up</a>
@@ -26,8 +26,8 @@
         </nav>
     </header>
 	<body>
-        <div class="menu">
-            <img class=img-menu src="./img/camagru-black.png">
+        <div class="menu container">
+            <img class="img-menu container" src="./img/camagru-black.png">
          
             <form method='post' action='./php/subscription.php'>
             <!-- <span><button class=fb id=facebook type='submit' name='subscribe'><i aria-hidden='true'></i><span id=fb_img_butt></span>Se connecter avec Facebook</button></span>
@@ -38,7 +38,7 @@
             <input id='login' type='text' name='login' value='' placeholder='Login (3 - 32)' autocomplete='on' required/>
             <input id='login' type='password' name='password' value='' placeholder='Password (4 - 50)' autocomplete='on' required/>
             <input id='login' type='password' name='password-check' value='' placeholder='Type your password again' autocomplete='on' required/>
-            <button id='login-button' class="btn btn-lg btn-primary btn-block" type='submit' name='subscribe'>Inscription</button><br>
+            <button id='login-button' class="btn btn-lg btn-primary btn-block container" type='submit' name='subscribe'>Inscription</button><br>
             <div class=text>En vous inscrivant, vous acceptez nos <br>Conditions d’utilisation et notre <br>Politique de confidentialité.</div>
         </form>
 
