@@ -11,9 +11,12 @@
         return $string;
     }
 
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=db_camagru;', root, 150291);    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     if(empty($errors)){
       
-            require_once('./setup.php');
+           
             
             // On génère le token qui servira à la validation du compte 
             $token = str_random(60);

@@ -127,11 +127,11 @@ p {
     background-size: 20%;
     margin-top: 0.8vh;
     margin-bottom: 10vh;
-    height: 80%;
+    height: 60%;
     width: 80%;
     overflow-x: auto;
     /* display: flex; */
-    justify-content:space-around;
+    justify-content: center;
 }
 
 .img-gallery {
@@ -148,4 +148,17 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#canvas {
+    border: solid 2px black;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.canvas {
+    background-color: rgb(216, 214, 214);
+    background-image: url("../img/camagru.png");
+    background-size: 20%;
 }

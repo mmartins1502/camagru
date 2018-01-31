@@ -1,5 +1,7 @@
 <?PHP
 session_start();
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=db_camagru;', root, 150291);    
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 if($_SESSION['auth'] != NULL && !empty($_POST) && !empty($_POST['Old_pass']) && !empty($_POST['New_pass']) && !empty($_POST['pass-check'])) {
     require_once 'setup.php';
     $req = $pdo->prepare('SELECT * FROM users WHERE login = :login');

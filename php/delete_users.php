@@ -4,6 +4,8 @@ function alertJS(){
     return '<script type="text/javascript"> alert(\'Votre compte a bien été supprimé ! \'); </script>';
     }
      
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=db_camagru;', root, 150291);    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     session_start();
     if($_SESSION['auth'] != NULL){

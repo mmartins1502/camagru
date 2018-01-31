@@ -12,8 +12,9 @@ session_start();
         $user = $req->fetch();        
 
         if($user == null){
+            // $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrect : User = NULL';
+            header('Location: ../index.php');
             echo alertJS();
-            $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrect : User = NULL';
             exit;           
         }else if(password_verify($_POST['password'], $user['password'])){
             $_SESSION['auth'] = $user;
