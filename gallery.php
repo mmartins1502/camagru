@@ -9,7 +9,7 @@ require_once('./html/head.php');
     <?php if ($_SESSION['auth']):?>
       <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand header" href="./cam.php">
-              <img src="../../camagru/img/camagru-blanc.png" width="90" height="40" alt="">
+              <img src="./img/camagru-blanc.png" width="90" height="40" alt="">
           </a>
           <ul class="nav justify-content-end">
                   <li class="nav-item">
@@ -65,7 +65,7 @@ require_once('./html/head.php');
                   }
                   foreach ($result as $value)
                   {
-                      echo "<img width='30%' src='./img/photos/".$value['url']."'/>";
+                      echo "<img class='photos' width='30%' src='" . $value['url'] . "'/>";
                   }
             ?>
         </div>

@@ -25,19 +25,19 @@
 		}
         try
 		{
-			$conn = new PDO("mysql:host=localhost;dbname=db_camagru", "root", "150291");
+            $conn = new PDO("mysql:host=localhost;dbname=db_camagru", "root", "150291");
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$req = $conn->prepare('INSERT INTO img (base_64, url, user_id, dates) VALUES (:base, :url, :userID, NOW())');
 			$req->execute(array(
                 ':base' => $img,
-				':url' => $filesql,
+				':url' => $filename,
 				':userID' => $_SESSION['auth']['id']
 			));
 		}
 		catch(PDOException $e)
 		{
-			echo "Couldn't write in Database: " . $e->getMessage();
+            echo "Couldn't write in Database: " . $e->getMessage();
         }
-        // echo $filename;
+        echo $filename;
     }
 ?>

@@ -97,12 +97,12 @@ p {
     text-align: center;
 }
 
-#camera, #return-img {
+#camera {
     width: 100%;
     max-width: 600px;
     max-height: 460px;
-    border: solid black 6px;
-	border-radius: 5px;
+    /* border: solid black 6px;
+	border-radius: 5px; */
 }
 
 #vid_button {
@@ -130,8 +130,7 @@ p {
     height: 60%;
     width: 80%;
     overflow-x: auto;
-    /* display: flex; */
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .img-gallery {
@@ -144,21 +143,56 @@ p {
     align-self: center;
 }
 
-.cam {
+/* .cam {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 #canvas {
     border: solid 2px black;
     border-radius: 5px;
-    margin-top: 10px;
-    width: 50%;
+    margin-top: 8vw;
+    width: 100%;
+    max-width: 600px;
+    max-height: 460px;
 }
 
 .canvas {
     background-color: rgb(216, 214, 214);
     background-image: url("../img/camagru.png");
     background-size: 20%;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    margin: 10px;
+}
+
+.side {
+    border: solid black 2px;
+    border-radius: 5px;    
+    background-color: rgb(216, 214, 214);
+    background-image: url("../img/camagru.png");
+    background-size: 40%;
+}
+
+.main {
+    border: solid black 2px;
+    border-radius: 5px;    
+    background-color: rgb(216, 214, 214);
+    background-size: 10%;
+    max-width: 58vw;
+    margin-right: 5vh
+}
+
+.bottom {
+    border: solid black 2px;
+    border-radius: 5px;    
+    background-color: rgb(216, 214, 214);
+}
+
+.preview {
+    margin: 10px;
 }

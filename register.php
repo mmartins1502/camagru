@@ -4,7 +4,7 @@
 <header>
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="./gallery.php">
-                <img src="../../camagru/img/camagru-blanc.png" width="90" height="40" alt="">
+                <img src="./img/camagru-blanc.png" width="90" height="40" alt="">
             </a>
             <ul class="nav justify-content-end">
                     <li class="nav-item">
