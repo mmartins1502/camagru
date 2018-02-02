@@ -17,10 +17,12 @@
 
         if (file_exists($filter))
 		{
+            $filter_top = $_POST['top'];
+            $filter_left = $_POST['left'];
 			$dest = imagecreatefromstring($filedata);
 			$src = imagecreatefrompng($filter);
-			$src = imagescale($src, imagesx($dest) * 0.5);
-			imagecopy($dest, $src, 0, 0, 0, 0, imagesx($src) - 1, imagesy($src) - 1);
+			$src = imagescale($src, imagesx($dest));
+			imagecopy($dest, $src, $filter_top, $filter_left, 0, 0, imagesx($src) - 1, imagesy($src) - 1);
 			imagepng($dest, $filename);
 		}
         try

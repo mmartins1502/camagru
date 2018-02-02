@@ -18,11 +18,24 @@
 		mousePosition,
 		offset = [0,0],
 		isDown = false;
+	
+
+
+//////////////////////////////////////////////COMPATIBILITY BROWSER///////////////////////////////////////////
+
+
 
 	navigator.getMedia = (navigator.getUserMedia ||
 		navigator.webkitGetUserMedia ||
 		navigator.mozGetUserMedia ||
 		navigator.msGetUserMedia);
+	
+
+
+//////////////////////////////////////////////VIDEO STREAM///////////////////////////////////////////
+
+
+
 
 	navigator.getMedia({
 			video: true,
@@ -42,18 +55,35 @@
 		}
 	);
 
-	
+		
+
+
+//////////////////////////////////////////////SELECT FACE FILTER///////////////////////////////////////////
+
+
+
 	tab.forEach((elem) => {
 		console.log(elem)
 		elem.addEventListener('click', () => {
 			console.log(divFlot)
-			divFlot.innerHTML = `<img id='drag' src=${elem.src} width='70%' />`;
+			divFlot.innerHTML = `<img id='img-drag' src=${elem.src} width='70%' />`;
 			console.log(divFlot)
 		})
 	})
+	
 
-	divFlot.addEventListener('mousedown', function(e) {
+
+//////////////////////////////////////////////DRAG FACE FILTER///////////////////////////////////////////
+
+
+
+	document.addEventListener('mousedown', function(e) {
 		isDown = true;
+		console.log('divFlot.offsetLeft', divFlot.offsetLeft);
+		console.log('e.clientX', e.clientX);		
+		var area = document.getElementById('area');
+		var camera = document.getElementById('camera');
+		console.log(area.offsetHeight);
 		offset = [
 			divFlot.offsetLeft - e.clientX,
 			divFlot.offsetTop - e.clientY
@@ -67,16 +97,24 @@
 	document.addEventListener('mousemove', function(event) {
 		event.preventDefault();
 		if (isDown) {
-			mousePosition = {
-	
-				x : event.clientX,
-				y : event.clientY
-	
-			};
+			if (event.clientX <= 480 && event.clientX >= 50 && event.clientY <= 440 && event.clientY >= 200) {
+				mousePosition = {
+					
+								x : event.clientX,
+								y : event.clientY
+					
+							};
+			}
 			divFlot.style.left = (mousePosition.x + offset[0]) + 'px';
 			divFlot.style.top  = (mousePosition.y + offset[1]) + 'px';
 		}
 	}, true);
+	
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 	video.addEventListener('canplay', function (ev) {
 		if (!streaming) {
@@ -89,6 +127,12 @@
 		}
 	}, false);
 	
+
+
+//////////////////////////////////////////////TRIGGER PIX & RERESH 4 LAST PIX///////////////////////////////////////////
+
+
+
 	function takepicture() {
 		context.drawImage(video, 0, 0, width, height);
 		var data = canvas.toDataURL('image/png');
@@ -100,7 +144,7 @@
 		var xml = new XMLHttpRequest();
 		xml.open('POST', rootURI + '/saveimg.php');
 		xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xml.send("filter=" + document.querySelector('input[name="filter"]:checked') + "&data=" + data);
+		xml.send("filter=" + document.querySelector('#img-drag').src + "&data=" + data + "&top=" + document.querySelector('#drag').style.top + "&left=" + document.querySelector('#drag').style.left);
 		xml.onload = function () {
 			var response = xml.responseText;
 			canvas.src = response;

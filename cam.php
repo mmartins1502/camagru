@@ -7,7 +7,7 @@ require('./php/loggued_only.php');
 
 <html>
 	<header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark" style="z-index: 1;">
             <a class="navbar-brand header" href="./cam.php">
                 <img src="./img/camagru-blanc.png" width="90" height="40" alt="">
 			</a>
@@ -33,28 +33,37 @@ require('./php/loggued_only.php');
 
 	<body>
 		<br>
-			<div class='container' height=450px>
-				<div class="row">
-					<div class="main col-lg-8 row container">
-						<div id='top-center-app' class='cam col-md-6' style="text-align: center;float:left;">
-							
-							<video id='camera'  autoplay></video>
-							<div id='drag' style="position: absolute; width: 250px;"></div>
-							<button id="vid_button" class="btn btn-lg btn-danger">Snapshot</button>
-						</div>
-						<div class="col-md-6" style="text-align: center;float:right;position:relative;">
+		<div class="mainpage">
+		<div class="row">
+		<div class="column col-xs-11">
+			<div class='container'>
+				<div class="main container">
+					<div class="wrapper" style="width:1200px;">
+						<div id="one">
+							<div id='top-center-app' class='cam container' style="text-align: center;float:left;">
+								<div id='area' style="width:500px;float: left;">
+									<video id='camera'  autoplay></video>
+									<div id='drag' style="position: absolute; width: 250px;z-index: 1; top: -1px"></div>
+								</div>
+								<button id="vid_button" class="btn btn-lg btn-danger">Snapshot</button>
+							</div>
+						<div id="two" style="width:500px;float: left;">
 							<canvas id='canvas' class="canvas"></canvas>
 						</div>
 					</div>
-					<div class="side col-lg-2">
-						<img id='ciel' style="background-color: white;" class='object action' width=100 src='./img/filters/arcenciel.png' />
-						<img id='dog'  style="background-color: white;" class='object action' width=80 src='./img/filters/chien.png' />
-						<img id='demon'  style="background-color: white;" class='object action' width=100 src='./img/filters/demon.png' />
-						<img id='unicorn'  style="background-color: white;" class='object action' width=100 src='./img/filters/licorne.png' />
+				</div>
+				<div class="column col-xs-1 side" id="sidebar">
+					<div class="">
+						<img id='ciel'class='object action' style="border: solid black 2px; border-radius: 15px;width: 100px;background-color:white; opacity:20%;"  width=100 src='./img/filters/arcenciel.png' />
+						<img id='dog' class='object action' style="border: solid black 2px; border-radius: 15px;width: 100px;background-color:white; opacity:20%;"  width=80 src='./img/filters/chien.png' />
+						<img id='demon' class='object action' style="border: solid black 2px; border-radius: 15px;width: 100px;background-color:white; opacity:20%;"  width=100 src='./img/filters/demon.png' />
+						<img id='unicorn' class='object action' style="border: solid black 2px; border-radius: 15px;width: 100px;background-color:white; opacity:20%;"  width=100 src='./img/filters/licorne.png' />
 					</div>
 				</div>
 			</div>
-			<br><br><br><br><br>
+		</div>
+		</div>
+		</div>
 				<!-- <ul>
 					<li id='tab-upload' class='hidden'>Image Upload
 						<div id='no-camera' class='hidden'>
@@ -62,29 +71,33 @@ require('./php/loggued_only.php');
 						</div>
 					</li>
 				</ul> -->
-			<div id='bottom' class="bottom container">
-				<?PHP 
-									try
-									{
-										$pdo = new PDO('mysql:host=127.0.0.1;dbname=db_camagru;', root, 150291);    
-										$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-										$req = $pdo->prepare('SELECT * FROM img ORDER BY dates DESC');
-										$req->execute();
-										$result = $req->fetchAll();
-									}
-									catch (Exception $e)
-									{
-										echo "Couldn't load photos : " . $e->getMessage();
-									}
-									foreach ($result as $key => $value)
-									{
-										if ($key <= 3)
-												echo "<img class='preview' id='$key' width='20%' src='" . $value['url'] . "'/>";
-										else
-												break;
-									}
-						?>
+			<div id='bottom' class="bottom">
+				<div class="container" style="padding-right: -2vw;">
+					<?PHP 
+						try
+						{
+							$pdo = new PDO('mysql:host=127.0.0.1;dbname=db_camagru;', root, 150291);    
+							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+							$req = $pdo->prepare('SELECT * FROM img ORDER BY dates DESC');
+							$req->execute();
+							$result = $req->fetchAll();
+						}
+						catch (Exception $e)
+						{
+							echo "Couldn't load photos : " . $e->getMessage();
+						}
+						foreach ($result as $key => $value)
+						{
+							if ($key <= 3)
+									echo "<img class='preview' id='$key' width='20%' src='" . $value['url'] . "'/>";
+							else
+									break;
+						}
+					?>
+				</div>
 			</div>
-	<script src="./js/cam.js"></script>
+		</div>
+		<script src="./js/cam.js"></script>
 	</body>
+	<footer class="footer">mmartins 2018</footer>
 </html>

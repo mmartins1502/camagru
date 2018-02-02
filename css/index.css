@@ -101,6 +101,7 @@ p {
     width: 100%;
     max-width: 600px;
     max-height: 460px;
+    min-width: 300px;
     /* border: solid black 6px;
 	border-radius: 5px; */
 }
@@ -113,11 +114,6 @@ p {
 	/* font-size: 1vw;     */
 }
 
-#bottom-left-app {
-    border: solid 3px black;
-    border-radius: 10px;
-    margin-top: 20vh;
-}
 
 .content-all {
     background-color: rgb(216, 214, 214);
@@ -156,6 +152,7 @@ p {
     width: 100%;
     max-width: 600px;
     max-height: 460px;
+    min-width: 300px;
 }
 
 .canvas {
@@ -188,6 +185,8 @@ img {
 }
 
 .bottom {
+    width: 80%;
+    margin-top: 20vw;
     border: solid black 2px;
     border-radius: 5px;    
     background-color: rgb(216, 214, 214);
@@ -196,3 +195,81 @@ img {
 .preview {
     margin: 10px;
 }
+
+.mainpage {
+        min-height: calc(80vh - 60px);
+}
+
+/* body {
+    margin: 0;
+  } */
+
+.footer {
+    text-align: align;
+    position: absolute;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: rgb(216, 214, 214);
+    bottom: -80%
+  }
+
+  .mainpage, .row {
+    height: 100%;
+    margin-left:0;
+    margin-right:0;
+ }
+ 
+ .mainpage:before, .mainpage:after,
+ .column:before, .column:after {
+     content: "";
+     display: table;
+ }
+ 
+ .mainpage:after,
+ .column:after {
+     clear: both;
+ }
+ 
+ #sidebar {
+   background-color:#eee;
+   height:100%;
+   position:fixed;
+   right:0;
+   bottom: 0;
+   z-index: 0;
+   padding-top: 10vh;
+   width: 122px;
+ }
+
+ .wrapper { 
+    overflow:hidden;
+  }
+  
+  .wrapper div {
+     min-height: 40vh;
+     padding: 10px;
+  }
+
+  #one {
+    float:left; 
+    margin-right:20px;
+    width:100%;
+  }
+
+  #two { 
+    overflow:hidden;
+    margin:10px;
+    min-height:170px;
+  }
+  
+  @media screen and (max-width: 400px) {
+     #one { 
+      float: none;
+      margin-right:0;
+      width:auto;
+      border:0;
+      border-bottom:2px solid #000;    
+    }
+  }
