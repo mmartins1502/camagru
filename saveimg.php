@@ -5,7 +5,11 @@
     {
         if (!file_exists("./img/photos"))
             mkdir ("./img/photos");
-        $filter = "./img/filters/" . $_POST['filter'] . ".png";
+        $str = $_POST['filter'];
+        $str1 = str_replace('http://localhost:8080/camagru/img/filters/', '', $str);
+        // $str = str_replace('http://localhost:8080/camagru/img/filters/', '', $str);
+        $filter = "./img/filters/" . $str1;
+        // echo $filter;
         $img = $_POST['data'];
         $img = str_replace('data:image/png;base64,', '', $img);
         $img = str_replace(' ', '+', $img);
@@ -17,13 +21,13 @@
 
         if (file_exists($filter))
 		{
-            $filter_top = $_POST['top'];
-            $filter_left = $_POST['left'];
-			$dest = imagecreatefromstring($filedata);
-			$src = imagecreatefrompng($filter);
-			$src = imagescale($src, imagesx($dest));
-			imagecopy($dest, $src, $filter_top, $filter_left, 0, 0, imagesx($src) - 1, imagesy($src) - 1);
-			imagepng($dest, $filename);
+            // $filter_top = $_POST['top'];
+            // $filter_left = $_POST['left'];
+			$dest = imagecreatefrompng($filename);
+			$cover = imagecreatefrompng($filter);
+			$cover = imagescale($cover, imagesx($dest));
+            imagecopymerge($dest, $cover, 10, 9, 0, 0, 181, 180, 100);
+            imagepng($dest, $filename);
 		}
         try
 		{

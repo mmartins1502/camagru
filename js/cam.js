@@ -63,11 +63,8 @@
 
 
 	tab.forEach((elem) => {
-		console.log(elem)
 		elem.addEventListener('click', () => {
-			console.log(divFlot)
-			divFlot.innerHTML = `<img id='img-drag' src=${elem.src} width='70%' />`;
-			console.log(divFlot)
+			divFlot.innerHTML = `<img id='img-drag' src=${elem.src} width='70%' style="margin-top:150px; margin-left:30px" />`;
 		})
 	})
 	
@@ -97,7 +94,7 @@
 	document.addEventListener('mousemove', function(event) {
 		event.preventDefault();
 		if (isDown) {
-			if (event.clientX <= 480 && event.clientX >= 50 && event.clientY <= 440 && event.clientY >= 200) {
+			if (event.clientX <= 480 && event.clientX >= 100 && event.clientY <= 410 && event.clientY >= 265) {
 				mousePosition = {
 					
 								x : event.clientX,
@@ -144,20 +141,31 @@
 		var xml = new XMLHttpRequest();
 		xml.open('POST', rootURI + '/saveimg.php');
 		xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		console.log('filter name', document.querySelector('#img-drag').src);
+		console.log('top', document.querySelector('#drag').style.top);
+		console.log('left', document.querySelector('#drag').style.left);
 		xml.send("filter=" + document.querySelector('#img-drag').src + "&data=" + data + "&top=" + document.querySelector('#drag').style.top + "&left=" + document.querySelector('#drag').style.left);
 		xml.onload = function () {
 			var response = xml.responseText;
 			canvas.src = response;
+			console.log('response', response);
 			var photo1, photo2, photo3;
 			photo1 = document.getElementById(0);
 			photo2 = document.getElementById(1);
 			photo3 = document.getElementById(2);
 			var container = document.getElementById('bottom');
-			response = "<img class='preview' id='0' width='20%' src='" + response + "'/>";
-			photo1 = "<img class='preview' id='1' width='20%' src='" + photo1.src + "'/>";
-			photo2 = "<img class='preview' id='2' width='20%' src='" + photo2.src + "'/>";
-			photo3 = "<img class='preview' id='3' width='20%' src='" + photo3.src + "'/>";
-			container.innerHTML = response + photo1 + photo2 + photo3;
+			if (photo1 != null) {
+				console.log("Salut\n")
+				response = "<img class='preview' id='0' width='20%' src='" + response + "'/>";
+				photo1 = "<img class='preview' id='1' width='20%' src='" + photo1.src + "'/>";
+				photo2 = "<img class='preview' id='2' width='20%' src='" + photo2.src + "'/>";
+				photo3 = "<img class='preview' id='3' width='20%' src='" + photo3.src + "'/>";
+				container.innerHTML = response + photo1 + photo2 + photo3;
+			} else {
+				console.log("coucou\n")
+				response = "<img class='preview' id='0' width='20%' src='" + response + "'/>";
+				container.innerHTML = response + photo1 + photo2 + photo3;
+			}
 		}
 	}
 

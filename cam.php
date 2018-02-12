@@ -38,19 +38,14 @@ require('./php/loggued_only.php');
 		<div class="column col-xs-11">
 			<div class='container'>
 				<div class="main container">
-					<div class="wrapper" style="width:1200px;">
-						<div id="one">
-							<div id='top-center-app' class='cam container' style="text-align: center;float:left;">
-								<div id='area' style="width:500px;float: left;">
-									<video id='camera'  autoplay></video>
-									<div id='drag' style="position: absolute; width: 250px;z-index: 1; top: -1px"></div>
-								</div>
-								<button id="vid_button" class="btn btn-lg btn-danger">Snapshot</button>
-							</div>
-						<div id="two" style="width:500px;float: left;">
-							<canvas id='canvas' class="canvas"></canvas>
+					<div id='top-center-app' class='cam container' style="text-align: center;float:left;">
+						<div id='area'class="container" style="width:500px;float: left;">
+							<video id='camera'  autoplay></video>
+							<div id='drag' style="position: absolute; width: 250px;z-index: 1; top: -1px"></div>
 						</div>
+						<button id="vid_button" class="btn btn-lg btn-danger">Snapshot</button>
 					</div>
+					<canvas id='canvas' class="canvas"></canvas>
 				</div>
 				<div class="column col-xs-1 side" id="sidebar">
 					<div class="">
